@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home</title>
+<style>
+    /* Reset */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        background-color: #f4f4f9;
+        color: #333;
+    }
+
+    /* Navbar */
+    nav {
+        background-color: #4a90e2;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+    }
+
+    nav .logo img {
+        height: 50px;
+        width: auto;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+
+    nav ul li a:hover {
+        color: #ffdd57;
+    }
+
+    /* Hamburger menu for mobile */
+    .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+    }
+
+    .hamburger div {
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        transition: 0.3s;
+    }
+
+    /* Main Content */
+    .container {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+        display: grid;
+        grid-template-columns: repeat(3, 400px); /* 3 cards per row */
+        gap: 2rem;
+        justify-content: center; /* center cards horizontally */
+    }
+
+    .card-link {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+    }
+
+    .card {
+        width: 400px; /* fixed width to match image */
+        background-color: #fff;
+        border-radius: 20px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    .card img {
+        width: 400px;
+        height: 180px;
+        object-fit: cover;
+    }
+
+    .card-content {
+        padding: 1rem 1.5rem;
+    }
+
+    .card-content h3 {
+        margin-bottom: 0.5rem;
+        font-size: 1.3rem;
+    }
+
+    .card-content p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        color: #666;
+    }
+
+    /* Footer */
+    footer {
+        text-align: center;
+        padding: 2rem;
+        background-color: #4a90e2;
+        color: #fff;
+        margin-top: 3rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 1280px) {
+        .container {
+            grid-template-columns: repeat(3, 1fr);
+            justify-content: center;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        .container {
+            grid-template-columns: repeat(2, 1fr); /* 2 per row on medium screens */
+            justify-content: center;
+        }
+    }
+
+    @media (max-width: 768px) {
+        nav {
+            padding: 0.5rem 1rem;
+        }
+
+        nav .logo img {
+            height: 30px;
+        }
+
+        nav ul {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: #4a90e2;
+            flex-direction: column;
+            align-items: center;
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.3s ease-in-out;
+        }
+
+        nav ul li {
+            margin: 1rem 0;
+        }
+
+        nav ul.active {
+            max-height: 300px;
+        }
+
+        .hamburger {
+            display: flex;
+        }
+
+        .container {
+            grid-template-columns: 1fr; /* 1 per row on mobile */
+        }
+
+        .card {
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .card img {
+            width: 100%;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <a href="./Diagonal Mario" class="card-link">
+        <div class="card">
+            <img src="./img/diag-mar.png" alt="Diagonal Mario">
+            <div class="card-content">
+                <h3>Diagonal Mario</h3>
+                <p>Super Mario World Rom hack "The Ultimate meme machine"(Netplay button to play online. Music may be choppy)</p>
+            </div>
+        </div>
+    </a>
+	<a href="./bejeweled-hd" class="card-link">
+        <div class="card">
+            <img src="./img/bejeweled.jpg" alt="Bejeweled">
+            <div class="card-content">
+                <h3>Bejeweled</h3>
+                <p>Puzzle Game. Won the Match-3 Puzzle Game award</p>
+            </div>
+        </div>
+    </a>
+	<a href="./sandboxels" class="card-link">
+        <div class="card">
+            <img src="./img/sandboxels.png" alt="Sandboxels">
+            <div class="card-content">
+                <h3>Sandboxels</h3>
+                <p>Sandboxels is a sandbox with over 500 unique elements to play with</p>
+            </div>
+        </div>
+    </a>
+	<a href="./cookieclicker" class="card-link">
+        <div class="card">
+            <img src="./img/cookieclicker.jpg" alt="Cookie Clicker">
+            <div class="card-content">
+                <h3>Cookie Clicker</h3>
+                <p>You know cookie clicker you buffoon. Stop reading this. please...</p>
+            </div>
+        </div>
+    </a>
+	<a href="./hexgl" class="card-link">
+        <div class="card">
+            <img src="./img/hexgl.jpg" alt="HexGL">
+            <div class="card-content">
+                <h3>HexGL</h3>
+                <p>HexGL is a 3D futuristic racing game where you try to get the best time possible.</p>
+            </div>
+        </div>
+    </a>
+		<a href="./javascript-racer" class="card-link">
+        <div class="card">
+            <img src="./img/jsracer.ppm" alt="javascript-racer">
+            <div class="card-content">
+                <h3>Javascript Racer</h3>
+                <p>A simple racing game made in javascript. v4 final is the best map by far.</p>
+            </div>
+        </div>
+    </a>
+	<a href="./alieninvasion" class="card-link">
+        <div class="card">
+            <img src="./img/alieninvasion.png" alt="alieninvasion">
+            <div class="card-content">
+                <h3>Alien Invasion</h3>
+                <p>A fun alien invasion game. Kill the enemies and dodge the bullets.</p>
+            </div>
+        </div>
+    </a>
+	<a href="./btd1" class="card-link">
+        <div class="card">
+            <img src="./img/btd1.jpg" alt="btd1">
+            <div class="card-content">
+                <h3>Bloons Tower Defense 1</h3>
+                <p>The First of the BTD saga. Flash Emulated using ruffle.</p>
+            </div>
+        </div>
+    </a>
+	<a href="./twhg" class="card-link">
+        <div class="card">
+            <img src="./img/twhg.jpg" alt="The Worlds Hardest Game">
+            <div class="card-content">
+                <h3>The Worlds Hardest Game</h3>
+                <p>An infuriating game where you dodge the bullets. and collect coins. Flash Emulated using ruffle.</p>
+            </div>
+        </div>
+    </a>
+	<a href="./splitt" class="card-link">
+        <div class="card">
+            <img src="./img/split.png" alt="split">
+            <div class="card-content">
+                <h3>Split</h3>
+                <p>A Co op puzzle game where one player is WASD and the other arrow keys sperated by worlds.</p>
+            </div>
+        </div>
+    </a>
+	<a href="./smb" class="card-link">
+        <div class="card">
+            <img src="./img/smb.jpg" alt="smb">
+            <div class="card-content">
+                <h3>Super Mario Bros</h3>
+                <p>The Original super mario bros. Netplay button to play online.</p>
+            </div>
+        </div>
+    </a>
+	<a href="./bbfps" class="card-link">
+        <div class="card">
+            <img src="./img/bbfps.png" alt="bbfps">
+            <div class="card-content">
+                <h3>Bean Battle FPS</h3>
+                <p>An fps shooter where people are beans because it isnt graphically intense(:</p>
+            </div>
+        </div>
+    </a>
+	<a href="./gfm" class="card-link">
+        <div class="card">
+            <img src="./img/gfm.png" alt="gfm">
+            <div class="card-content">
+                <h3>A Generic Figher. Maybe?</h3>
+                <p>A derpy generic fighting game.</p>
+            </div>
+        </div>
+    </a>
+	<a href="./hs1" class="card-link">
+        <div class="card">
+            <img src="./img/hs1.webp" alt="hs1">
+            <div class="card-content">
+                <h3>Henry Stickmin 1: Breaking The bank</h3>
+                <p>The first Henry stickmin game(If you dont count crossing the pit).</p>
+            </div>
+        </div>
+    </a>
+	<a href="./hs2" class="card-link">
+        <div class="card">
+            <img src="./img/hs2.jpg" alt="hs2">
+            <div class="card-content">
+                <h3>Henry Stickmin 2: Escaping The Prison</h3>
+                <p>The second Henry stickmin game(If you dont count crossing the pit).</p>
+            </div>
+        </div>
+    </a>
+	<a href="./hs3" class="card-link">
+        <div class="card">
+            <img src="./img/hs3.jpg" alt="hs3">
+            <div class="card-content">
+                <h3>Henry Stickmin 3: Stealing The Diamond</h3>
+                <p>The third Henry stickmin game(If you dont count crossing the pit).</p>
+            </div>
+        </div>
+    </a>
+	<a href="./hs4" class="card-link">
+        <div class="card">
+            <img src="./img/hs4.jpg" alt="hs4">
+            <div class="card-content">
+                <h3>Henry Stickmin 4: Infiltrating The Airship</h3>
+                <p>The fourth Henry stickmin game(If you dont count crossing the pit).</p>
+            </div>
+        </div>
+    </a>
+	<a href="./hs5" class="card-link">
+        <div class="card">
+            <img src="./img/hs5.jpg" alt="hs5">
+            <div class="card-content">
+                <h3>Henry Stickmin 5: Fleeing The Complex</h3>
+                <p>The fifth Henry stickmin game(If you dont count crossing the pit).</p>
+            </div>
+        </div>
+    </a>
+	<a href="./ph" class="card-link">
+        <div class="card">
+            <img src="./img/ph.gif" alt="ph">
+            <div class="card-content">
+                <h3>Pico Hot</h3>
+                <p>An 8-bit remake of SuperHot made with Pico-8.</p>
+            </div>
+        </div>
+    </a>
+	<a href="./pwr" class="card-link">
+        <div class="card">
+            <img src="./img/pwr.png" alt="pwr">
+            <div class="card-content">
+                <h3>Pico World Racing</h3>
+                <p>A 8 bit Raacer made with Pico-8.</p>
+            </div>
+        </div>
+    </a>
+	<a href="./misc-js-benchmarks/banana/" class="card-link">
+        <div class="card">
+            <img src="./img/bb.png" alt="bb">
+            <div class="card-content">
+                <h3>BananaBread</h3>
+                <p>An open arena fps battle game(only level 1 works the rest just dont have their level data files)</p>
+            </div>
+        </div>
+    </a>
+	<a href="./d" class="card-link">
+        <div class="card">
+            <img src="./img/d.png" alt="bb">
+            <div class="card-content">
+                <h3>Discord</h3>
+                <p>A widget bot shouved through jsdelivr taking from a wrps11 discord server i made.</p>
+            </div>
+        </div>
+    </a>
+	<a href="./baba" class="card-link">
+        <div class="card">
+            <img src="./img/baba.jpg" alt="bb">
+            <div class="card-content">
+                <h3>Baldi's Basics</h3>
+                <p>💀💀💀💀💀💀💀💀💀💀💀💀💀💀💀💀💀💀💀💀💀💀💀💀💀💀💀💀💀💀💀💀💀💀</p>
+            </div>
+        </div>
+    </a>
+	<a href="./hf" class="card-link">
+        <div class="card">
+            <img src="./img/hf.png" alt="bb">
+            <div class="card-content">
+                <h3>Hungry Frog</h3>
+                <p>Funni Hungi Frog</p>
+            </div>
+        </div>
+    </a>
+	<a href="./vc" class="card-link">
+        <div class="card">
+            <img src="./img/vc.png" alt="bb">
+            <div class="card-content">
+                <h3>Void City</h3>
+                <p>Basically just Hole.io but worse.</p>
+            </div>
+        </div>
+    </a>
+	<a href="./c" class="card-link">
+        <div class="card">
+            <img src="./img/c.jpg" alt="bb">
+            <div class="card-content">
+                <h3>Cascadence</h3>
+                <p>A fun tetris inspired puzzle game.(Game may take a while to load.)</p>
+            </div>
+        </div>
+    </a>
+</div>
+<script>
+function toggleMenu() {
+    document.getElementById('nav-menu').classList.toggle('active');
+}
+</script>
+
+</body>
+<script>
+// 🚫 Block access if localStorage key is set to "no"
+if (localStorage.getItem("access") === "no") {
+    document.body.innerHTML = `
+        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;background:#111;color:white;font-family:sans-serif;">
+            <h1>Access Denied</h1>
+            <p>You are not allowed to view this page.</p>
+        </div>
+    `;
+    throw new Error("Blocked due to localStorage setting.");
+}
+</script>
+</html>
